@@ -9,10 +9,7 @@ server.append('Show', (req, res, next) => {
     const productHelper = require('*/cartridge/scripts/helpers/productHelpers');
 
     const calculatePercentageOffHelperResult =
-        productHelper.calculatePercentageOff(
-            data.product.price.list.value,
-            data.product.price.sales.value
-        );
+        productHelper.calculatePercentageOff(data.product.price);
 
     const productModified = data.product;
 

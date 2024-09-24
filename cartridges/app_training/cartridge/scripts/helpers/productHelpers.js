@@ -1,29 +1,19 @@
 'use strict';
 
+/**
+ * Calculates the percentage off between the list price and the sales price.
+ *
+ * @param {Object} data - The data object containing price information.
+ * @returns {number|null} The discount percentage rounded to the nearest integer, or null if the list or sales price is not provided.
+ */
+
 var base = require('app_storefront_base/cartridge/scripts/helpers/productHelpers');
 
-/**
- * Calculates the percentage off between a standard price and a sale price.
- *
- * @param {number} standardPrice - The original price of the product.
- * @param {number} salePrice - The discounted price of the product.
- * @returns {number|null} The discount percentage, rounded to the nearest whole number, or null if no sale price is provided.
- *
- * @example
- * // returns 20
- * calculatePercentageOff(100, 80);
- *
- * @example
- * // returns null
- * calculatePercentageOff(100, null);
- */
-function calculatePercentageOff(standardPrice, salePrice) {
-    let discountPercentage = null;
+function calculatePercentageOff(data) {
+    if (!data.list || !data.sales) return null;
 
-    if (salePrice) {
-        const discount = standardPrice - salePrice;
-        discountPercentage = Math.round((discount / standardPrice) * 100);
-    }
+    const discount = data.list.value - data.sales.value;
+    const discountPercentage = Math.round((discount / data.list.value) * 100);
 
     return discountPercentage;
 }
