@@ -1,0 +1,13 @@
+<isif condition="${pdict.productsInCategory && pdict.productsInCategory.length > 0}">
+    <ul class="container  row product-grid col-6-md  mx-auto">
+        <isloop items="${pdict.productsInCategory}" var="product">
+            <div class="product-tile col-3">
+
+                <isset name="product" value="${product}" scope="page" />
+                
+                <isinclude template="product/productTile" />
+            </div>
+        </isloop>
+    </ul>
+
+</isif>
