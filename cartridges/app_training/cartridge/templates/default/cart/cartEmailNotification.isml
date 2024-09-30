@@ -1,0 +1,4 @@
+<body>    
+    <div>${pdict.name}</div>
+    <div>${pdict.job}</div>
+</body>
