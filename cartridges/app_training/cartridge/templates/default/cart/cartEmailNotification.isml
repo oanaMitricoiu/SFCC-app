@@ -1,0 +1,8 @@
+<body>
+    <h3>The following product was added to your cart.</h3>
+    <img src="${pdict.productImage}" alt="${pdict.productName}" />
+    <div>Product Name: <a href="${pdict.productUrl}">${pdict.productName}</a></div>
+    <div>Product Description: ${pdict.productDescription}</div>
+    <div>Each - USD ${pdict.price}</div>
+    <div>Quantity: ${pdict.quantity}</div>
+</body>
