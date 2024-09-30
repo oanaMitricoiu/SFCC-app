@@ -2,58 +2,55 @@
 
 var server = require('server');
 var userLoggedIn = require('app_storefront_base/cartridge/scripts/middleware/userLoggedIn');
+var ProductMgr = require('dw/catalog/ProductMgr');
 server.extend(module.superModule);
 
 server.append('AddProduct', (req, res, next) => {
-    var CustomerMgr = require('dw/customer/CustomerMgr');
-    var Resource = require('dw/web/Resource');
+    var ProductFactory = require('*/cartridge/scripts/factories/product');
     var Site = require('dw/system/Site');
     var emailHelpers = require('app_storefront_base/cartridge/scripts/helpers/emailHelpers');
-    var Template = require('dw/util/Template');
-    var HashMap = require('dw/util/HashMap');
 
-    var accountHelpers = require('app_storefront_base/cartridge/scripts/helpers/accountHelpers');
-    var hooksHelper = require('app_storefront_base/cartridge/scripts/helpers/hooks');
-
+    // Get the current customer's profile and email
     var currentCustomerProfile = req.currentCustomer.profile;
+    if (!currentCustomerProfile) return next();
+
     var customerEmail = currentCustomerProfile.email;
-    
+    if(!customerEmail) return next();
 
-    // var currentCustomer = CustomerMgr.getCustomerByCustomerNumber(
-    //     customerLoginResult.customerNo
-    // );
-    // var customerProfile = currentCustomer.getProfile();
-    // var customerEmail = customerProfile.getEmail();
-
+    // Create the email object with recipient, subject, sender, and type
     var emailObj = {
         to: customerEmail,
-        subject: 'Hello',
+        subject: 'Confirmation of Your Order',
         from:
             Site.current.getCustomPreferenceValue('customerServiceEmail') ||
             'no-reply@testorganization.com',
         type: 4
     };
 
-    var customer = {
-        name: "Oana",
-        job:"programmer"
-    }
+    var productId = req.form.pid;
+    if (!productId) return next();
 
-    
+    var product = ProductMgr.getProduct(productId);
+    if (!product) return next();
 
-    try {
-        emailHelpers.sendEmail(
+    // Create an object with the product details
+    var productDetails = {
+        productId: product.ID,
+        productName: product.name,
+        productDescription: product.shortDescription
+            ? product.shortDescription.markup
+            : '',
+        productImage: product.getImage('small', 0).getAbsURL().toString(),
+        price: product.priceModel.price.value.toFixed(2),
+        quantity: req.form.quantity
+    };
+
+    // Send an email with the product details using the emailHelpers module
+    emailHelpers.sendEmail(
         emailObj,
         'cart/cartEmailNotification',
-        customer,
-        
+        productDetails
     );
-
-    }catch(error){
-        var b = error
-        console.log(b)
-    }
-    
 
     next();
 });
