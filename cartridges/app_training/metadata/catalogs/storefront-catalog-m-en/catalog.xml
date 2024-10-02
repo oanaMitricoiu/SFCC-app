@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31"
+    catalog-id="storefront-catalog-m-en">
+    <category-assignment category-id="pencil-skirts" product-id="25553417M">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+    <category-assignment category-id="pencil-skirts" product-id="25688325M">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+    <category-assignment category-id="pencil-skirts" product-id="25696873M">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+    <category-assignment category-id="pencil-skirts" product-id="25553417M">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+    <category-assignment category-id="pencil-skirts" product-id="25591410M">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+    <category-assignment category-id="pencil-skirts" product-id="25688536M">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+    <category-assignment category-id="pencil-skirts" product-id="25696606M">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+    <category-assignment category-id="pencil-skirts" product-id="25589004M">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+    <category-assignment category-id="pencil-skirts" product-id="25593277M">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+    <category-assignment category-id="pencil-skirts" product-id="25502097M">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+    <category-assignment category-id="pencil-skirts" product-id="25589534M">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+    <category-assignment category-id="pencil-skirts" product-id="25696622M">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+    <category-assignment category-id="pencil-skirts" product-id="25493646M">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+    <category-assignment category-id="pencil-skirts" product-id="25696881M">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+</catalog>
