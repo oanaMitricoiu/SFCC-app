@@ -1,0 +1,50 @@
+<isscript>
+         var assets = require('*/cartridge/scripts/assets.js'); 
+        assets.addCss('/css/login.css');
+
+    </isscript> 
+
+    <isinclude template="/common/htmlHead" />
+  
+
+<div class="hero slant-down login-banner">
+    <h1 class="page-title">Subscribe to our newsletter</h1>
+</div>
+
+<h2>
+    <isprint value="${pdict.message}" />
+</h2>
+
+<form action="${URLUtils.url('Checkout-Submit').toString()}" method="POST" class="subscribe-form" >
+
+<div class="wrapper">
+<div class="line"></div>
+</div>
+
+
+<div class="form-group">
+<label class="form-control-label" for="email">E-mail</label>
+<input type="text" class="form-control" id="email" name="email" />
+<div class="invalid-feedback"></div>
+</div>
+
+<div class="form-group">
+<label class="form-control-label" for="firstName">First Name</label>
+<input type="text" class="form-control name" id="firstName" name="firstName"  />
+<div class="invalid-feedback"></div>
+</div>
+
+<div class="form-group">
+<label class="form-control-label" for="lastName">Last Name</label>
+<input type="text" class="form-control name" id="lastName" name="lastName"/>
+<div class="invalid-feedback"></div>
+</div>
+
+<div class="row">
+<div class="col">
+<input type="submit" value="Save" class="submit name"/>
+</div>
+</div>
+</form>
+
+
