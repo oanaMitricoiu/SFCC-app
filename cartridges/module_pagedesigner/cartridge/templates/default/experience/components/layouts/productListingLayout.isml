@@ -5,23 +5,17 @@
     </isscript>
 
     <body>
-    
-    <div class="product-container">
-    <isif condition="${pdict.products && pdict.products.length > 0}">
-        <isloop items="${pdict.products}" var="product" >
-            <isset name="product" value="${product}" scope="page" />
-            
-            <isinclude template="product/productTile" />
-        </isloop>
-        </isif>
-    </div>
-
-    
-<h2>${pdict.ids}</h2>
-  
-
+        <div class="product-container">
+            <isif condition="${pdict.products && pdict.products.length > 0}">
+                <isloop items="${pdict.products}" var="product">
+                    <isset name="product" value="${product}" scope="page" />
+                    <div class="product-item">
+                        <isinclude template="product/productTile" />
+                    </div>
+                </isloop>
+            </isif>
+        </div>
     </body>
-
-
-
 </isdecorate>
+
+

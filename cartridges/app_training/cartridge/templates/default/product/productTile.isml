@@ -15,10 +15,12 @@
             <isinclude template="product/components/pricing/main" />
         </isif>
 
+
         <isif condition="${pdict.display.ratings !== false}">
             <isinclude template="product/productTileFooter" />
         </isif>
-        <div class="product-test-class">custom css class example</div>
+
+        
     </div>
     <!-- END_dwmarker -->
 </div>
