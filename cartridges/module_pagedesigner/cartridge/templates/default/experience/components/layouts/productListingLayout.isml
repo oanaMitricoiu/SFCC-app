@@ -1,0 +1,21 @@
+<isdecorate template="${pdict.decorator}">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/productListingLayout.css')
+    </isscript>
+
+    <body>
+        <div class="product-container">
+            <isif condition="${pdict.products && pdict.products.length > 0}">
+                <isloop items="${pdict.products}" var="product">
+                    <isset name="product" value="${product}" scope="page" />
+                    <div class="product-item">
+                        <isinclude template="product/productTile" />
+                    </div>
+                </isloop>
+            </isif>
+        </div>
+    </body>
+</isdecorate>
+
+
