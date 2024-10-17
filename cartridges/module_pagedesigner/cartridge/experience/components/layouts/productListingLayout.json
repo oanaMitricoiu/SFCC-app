@@ -1,0 +1,34 @@
+{
+    "name": "Product Listing",
+    "description": "Page Layout with three regions",
+    "group": "layouts",
+
+     "attribute_definition_groups": [
+        {
+            "id": "product_ids",
+            "name": "List of Product IDs",
+            "description": "Select Product to be displayed.",
+            "attribute_definitions": [
+                {
+                    "id": "product_ids",
+                    "name": "Product IDs",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "category",
+            "name": "Category",
+            "description": "Select Category to be displayed.",
+            "attribute_definitions": [
+                {
+                    "id": "category",
+                    "name": "Category",
+                    "type": "category",
+                    "required": true
+                }
+            ]
+        }],
+    "region_definitions": []
+}
