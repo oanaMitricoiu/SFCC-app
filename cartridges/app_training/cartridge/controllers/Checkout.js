@@ -9,7 +9,12 @@ server.extend(module.superModule);
 
 // Define a GET route for subscribing to the newsletter
 server.get('Subscribe', function (req, res, next) {
-    res.render('subscribe/subscribe');
+    var URLUtils = require('dw/web/URLUtils');
+    var myRedirectUrl = URLUtils.https('Home-Show').toString();
+
+    res.render('subscribe/subscribe', {
+        redirectUrl: myRedirectUrl
+    });
 
     next();
 });
@@ -18,7 +23,6 @@ server.get('Subscribe', function (req, res, next) {
 server.post('Submit', function (req, res, next) {
     var URLUtils = require('dw/web/URLUtils');
     var Transaction = require('dw/system/Transaction');
-  
 
     var form = req.form;
 
@@ -38,7 +42,7 @@ server.post('Submit', function (req, res, next) {
     );
 
     if (empty(newsletterDB)) {
-          var newsletter;
+        var newsletter;
 
         Transaction.wrap(function () {
             var Coupon = require('dw/campaign/Coupon');
@@ -91,12 +95,13 @@ server.post('Submit', function (req, res, next) {
             'checkout/subscribeError',
             userDetails
         );
+
+        res.setStatusCode(400);
+        res.json();
+
     }
-
-    // Redirect the user to the checkout begin page
-    res.redirect(URLUtils.https('Checkout-Begin').toString());
-
-    next();
+        res.json();
+        return next();
 });
 
 module.exports = server.exports();
