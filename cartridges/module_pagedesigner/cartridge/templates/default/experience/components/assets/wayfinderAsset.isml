@@ -1,11 +1,11 @@
 <isdecorate template="${pdict.decorator}">
     <isscript>
     var assets = require('*/cartridge/scripts/assets.js');
-    assets.addCss('/css/wayfinderasset.css')
+    assets.addCss('/css/wayfinderAsset.css');
     </isscript>
 
-    <div class="wayfinder-container">
-        <figure>
+    <div>
+        <figure >
         
             <picture>
                 <source srcset="${pdict.image.src.desktop}" media="(min-width: 768px)">
@@ -27,4 +27,7 @@
         </figure>
     </div>
 </isdecorate>
+
+
+
 

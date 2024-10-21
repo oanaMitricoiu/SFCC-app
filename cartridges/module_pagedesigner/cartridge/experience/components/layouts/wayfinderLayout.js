@@ -19,3 +19,4 @@ module.exports.render = function (context) {
     return new Template('experience/components/layouts/wayfinderLayout').render(model)
         .text;
 };
+

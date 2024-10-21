@@ -105,7 +105,8 @@
   },
   "cartridges": [
     "app_storefront_base",
-    "app_training"
+    "app_training",
+    "module_pagedesigner"
   ],
   "aliasJS": {
     "base": "cartridges/app_storefront_base/cartridge/client/default/js",
