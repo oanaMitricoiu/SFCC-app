@@ -10,6 +10,11 @@ var ImageTransformation = require('app_storefront_base/cartridge/experience/util
 module.exports.render = function (context) {
     var model = new HashMap();
     var content = context.content;
+   
+
+    model.decorator = 'decoration/decorator';
+    model.categoryName = content.categoryLink.getDisplayName();
+    model.content = content;
 
     // Check if text_subline exists in the content
     model.text_headline = content.text_headline;
