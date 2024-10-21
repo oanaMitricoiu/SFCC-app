@@ -1,0 +1,29 @@
+{
+    "name": "Wayfinder Layout",
+    "description": "Page Layout with three regions",
+    "group": "layouts",
+
+    "attribute_definition_groups": [],
+    "region_definitions":[
+        {
+            "id": "wayfinderAsset1",
+            "name": "Wayfinder Asset"
+        },
+        {
+            "id": "wayfinderAsset2",
+            "name": "Wayfinder Asset"
+        },
+        {
+            "id": "wayfinderAsset3",
+            "name": "Wayfinder Asset"
+        },
+        {
+            "id": "wayfinderAsset4",
+            "name": "Wayfinder Asset"
+        }
+    ]
+    
+}
+
+
+
