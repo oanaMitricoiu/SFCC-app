@@ -1,0 +1,13 @@
+.flick-container {
+    display: flex;
+    width:100vw;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.flick-image {
+    margin: 2rem;
+    max-width: 18rem;
+    max-height: 20rem;
+}
