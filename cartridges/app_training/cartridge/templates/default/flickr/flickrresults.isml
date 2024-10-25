@@ -1,0 +1,22 @@
+<isdecorate template="common/layout/page">
+
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/flick.css');
+    </isscript>
+
+    <body>
+        <div class="flick-container">
+            <isloop items="${pdict.photos}" var="photo">
+                <div>
+                    <img class="flick-image"
+                        src="https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg"
+                        alt="${photo.title}" />
+                </div>
+
+            </isloop>
+
+        </div>
+    </body>
+
+</isdecorate>
