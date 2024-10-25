@@ -1,0 +1,19 @@
+<isdecorate template="common/layout">
+    <isreplace name="content">
+        <h1>Product Results for Sony</h1>
+        <isif condition="${products && products.hits.length > 0}">
+            <ul>
+                <isloop items="${products.hits}" var="product">
+                    <li>
+                        <img src="${product.image.link}" alt="${product.name}" />
+                        <h2>${product.name}</h2>
+                        <p>Price: ${product.price.value} ${product.price.currency}</p>
+                    </li>
+                </isloop>
+            </ul>
+        </isif>
+        <iselse>
+            <p>No products found.</p>
+        </iselse>
+    </isreplace>
+</isdecorate>
