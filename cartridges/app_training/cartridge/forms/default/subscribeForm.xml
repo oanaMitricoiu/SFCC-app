@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19" formid="subscribeForm">
+    <field formid="email" type="email" label="subscribeForm.email.label" mandatory="true" whitespace="remove" missing-error="subscribeForm.error.mandatory"/>
+    <field formid="firstName" type="string" label="subscribeForm.firstName.label" mandatory="true"
+         missing-error="subscribeForm.error.mandatory" />
+    <field formid="lastName" type="string" label="subscribeForm.lastName.label" mandatory="true"
+         missing-error="subscribeForm.error.mandatory" />
+    
+</form>
