@@ -1,0 +1,40 @@
+
+
+.subscribe-image {
+    background-image: url('../images/account.jpg');
+    background-position-y: 40%;
+}
+
+.subscribe-form {
+    width: 25rem;
+    height:50rem;
+    margin:0 auto;
+}
+
+.line {
+    width: 60rem;
+    height: 1px;
+    background-color: rgb(186, 182, 182);
+    margin-top:2rem;
+    margin-bottom:1rem;
+}
+
+.name{
+    width: 15rem;
+}
+
+.submit {
+    background-color: #00a1e1;
+    color: white;
+    border: none;
+    height: 2rem;
+    border-radius: 3px;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+
+}
+

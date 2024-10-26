@@ -1,0 +1,5 @@
+<body>
+<h1>Dear ${pdict.firstName} ${pdict.lastName},  thanks for signing up to receive our newsletter</h1>
+<h3>Starting today you will receive our newsletter</h3>
+<h2>${pdict.coupon}</h2>
+</body>

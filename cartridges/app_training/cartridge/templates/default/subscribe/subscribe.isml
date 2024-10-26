@@ -1,0 +1,74 @@
+<isdecorate template="common/layout/page">
+
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/modal.css');
+        assets.addCss('/css/spinner.css');
+    </isscript>
+
+    <div class="hero slant-down login-banner">
+        <h1 class="page-title">Subscribe to our newsletter</h1>
+    </div>
+
+    <h2>
+        <isprint value="${pdict.message}" />
+    </h2>
+
+    <div class="error">Something went wrong</div>
+
+    <form action="${URLUtils.url('Checkout-Submit').toString()}" method="POST" class="subscribe-form"
+        id="subscribeForm">
+
+        <div class="wrapper">
+            <div class="line"></div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" for="email">E-mail</label>
+            <input type="email" class="form-control" id="email" name="email" />
+            <div class="invalid-feedback"></div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" for="firstName">First Name</label>
+            <input type="text" class="form-control name" id="firstName" name="firstName" />
+            <div class="invalid-feedback"></div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" for="lastName">Last Name</label>
+            <input type="text" class="form-control name" id="lastName" name="lastName" />
+            <div class="invalid-feedback"></div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <input type="submit" value="Save" class="submit name" />
+            </div>
+        </div>
+    </form>
+
+    <div id="modal" class="modal">
+        <div class="modal-content-box">
+            <span class="spinner"></span>
+            <div class="closeIcon">
+                <button>&times;</button>
+            </div>
+
+            <div class="text">
+                <h3>Confirm Subscription</h3>
+                <hr />
+                <h4>Please click OK to confirm your subscription</h4>
+                <hr />
+            </div>
+            <div class="buttons">
+                <button id="close">Cancel</button>
+                <button class="okButton">Ok</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div id='urlContainer' data-redirect-url='${pdict.redirectUrl}'></div>
+
+</isdecorate>
